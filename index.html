@@ -19,12 +19,18 @@
             <nav class="site-nav">
                 <a href="./index.html" class="logo">Web<span class="logo-header">Studio</span></a>
                 <ul class="list">
-                    <li class="list-item"><a href="./index.html" class="link current">Студия</a></li>
-                    <li class="list-item"><a href="./portfolio.html" class="link">Портфолио</a></li>
-                    <li class="list-item"><a href="#" class="link">Контакты</a></li>
+                    <li class="list-item">
+                        <a href="./index.html" class="link current">Студия</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="./portfolio.html" class="link">Портфолио</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="link">Контакты</a>
+                    </li>
                 </ul>
             </nav>
-            <ul class="contact-nav-list">
+            <ul class="contact-nav list">
                 <li class="list-item">
                     <a href="mailto:info@devstudio.com" class="link">
                         <svg class="mail-icon" width=16 height=12>
@@ -46,7 +52,15 @@
         <section class="hero section">
             <div class="container">
                 <h1 class="hero-text">Эффективные решения<br>для вашего бизнеса</h1>
-                <button type="button" class="hero-button button">Заказать услугу</button>
+                <button data-modal-open type="button" class="hero-button button">Заказать услугу</button>
+                <div class="backdrop is-hidden" data-modal>
+                    <div class="modal">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio fuga aliquam placeat, error accusantium labore atque culpa numquam quae exercitationem quisquam repudiandae, nulla facere nesciunt, est aspernatur voluptates consequuntur iusto.
+                        </p>
+                        <button data-modal-close>Закрыть</button>
+                    </div>
+                </div>
             </div>   
         </section>
 
@@ -102,9 +116,24 @@
             <div class="container">
                 <h2 class="header">Чем мы занимаемся</h2>
                 <ul class="list">
-                    <li class="example"><img src="./images/box1.jpg" alt="первый пример" width="370"></li>
-                    <li class="example"><img src="./images/box2.jpg" alt="второй пример" width="370"></li>
-                    <li class="example"><img src="./images/box3.jpg" alt="третий пример" width="370"></li>
+                    <li class="example">
+                        <div class="thumb">
+                            <img src="./images/box1.jpg" alt="Десктопные приложения" width="370">
+                            <p class="label">Десктопные приложения</p>
+                        </div>
+                    </li>
+                    <li class="example">
+                        <div class="thumb">
+                             <img src="./images/box2.jpg" alt="Мобильные приложения" width="370">
+                             <p class="label">Мобильные приложения</p>
+                        </div>
+                    </li>
+                    <li class="example">
+                        <div class="thumb">
+                            <img src="./images/box3.jpg" alt="Дизайнерские решения" width="370">
+                            <p class="label">Дизайнерские решения</p>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -367,6 +396,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="./js/modal.js"></script>
 
 </body>
 </html>

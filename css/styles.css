@@ -80,17 +80,13 @@ button {
   /* outline: 2px solid red; */
 }
 
-.site-nav .list .list-item .current {
-  color: var(--accent-text-color);
-}
-
 /* ------------------------- */
 
 /* Описание стилей хедера */
 
-.header > .container,
+.header .container,
 .site-nav,
-.contact-nav-list {
+.contact-nav {
   display: flex;
   align-items: center;
 }
@@ -131,24 +127,24 @@ button {
   letter-spacing: 0.02em;
   color: var(--main-text-color);
   text-decoration: none;
+  position: relative;
 }
 
-.contact-nav-list {
+.contact-nav {
   margin-left: auto;
-  list-style-type: none;
 }
 
 .site-nav .list .list-item:not(:last-child),
-.contact-nav-list .list-item:not(:last-child) {
+.contact-nav .list-item:not(:last-child) {
   margin-right: 50px;
 }
 
-.contact-nav-list .list-item .link {
+.contact-nav .list-item .link {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
-.contact-nav-list .list-item .link {
+.contact-nav .list-item .link {
   padding-top: 32px;
   padding-bottom: 32px;
   font-weight: 500;
@@ -165,11 +161,27 @@ button {
   fill: currentColor;
 }
 
-.contact-nav-list .link:hover,
-.contact-nav-list .link:focus,
+.contact-nav .link:hover,
+.contact-nav .link:focus,
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-text-color);
+}
+
+.site-nav .link.current {
+  color: var(--accent-text-color);
+}
+
+.site-nav .link.current::after {
+  display: flex;
+  content: '';
+  position: absolute;
+  border-radius: 2px;
+  background: var(--accent-text-color);
+  height: 4px;
+  width: 100%;
+  bottom: -1px;
+  left: 0px;
 }
 
 /* --------------------------------- */
@@ -393,6 +405,28 @@ button {
 
 .work .example:not(:last-child) {
   margin-right: 30px;
+}
+
+.work .list .example .thumb {
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.work .list .example .thumb .label {
+  color: var(--main-backgroung);
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  height: 70px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 27px 0px;
+  background-color: rgba(47, 48, 58, 0.8);
+  color: #fff;
 }
 
 /* --------------------------------- */
