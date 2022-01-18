@@ -26,7 +26,7 @@
                         <a href="./portfolio.html" class="link">Портфолио</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="link">Контакты</a>
+                        <a href="#contacts" class="link">Контакты</a>
                     </li>
                 </ul>
             </nav>
@@ -53,14 +53,6 @@
             <div class="container">
                 <h1 class="hero-text">Эффективные решения<br>для вашего бизнеса</h1>
                 <button data-modal-open type="button" class="hero-button button">Заказать услугу</button>
-                <div class="backdrop is-hidden" data-modal>
-                    <div class="modal">
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio fuga aliquam placeat, error accusantium labore atque culpa numquam quae exercitationem quisquam repudiandae, nulla facere nesciunt, est aspernatur voluptates consequuntur iusto.
-                        </p>
-                        <button data-modal-close>Закрыть</button>
-                    </div>
-                </div>
             </div>   
         </section>
 
@@ -352,7 +344,7 @@
         <div class="container">
             <div>
                 <a href="./index.html" class="logo">Web<span class="logo-footer">Studio</span></a>
-                <address class="contacts">
+                <address class="contacts" id="contacts">
                     <ul class="list">
                         <li class="item"><a href="https://goo.gl/maps/2jHSUd7QNSbVqYPo9" class="text current">г. Киев, пр-т
                                 Леси Украинки, 26</a></li>
@@ -396,6 +388,20 @@
             </div>
         </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="modal-close" data-modal-close>
+                <svg class="close-icon">
+                    <use href="./images/sprite.svg#icon-close" />
+                </svg>
+            </button>
+            <!-- <input type="text" />
+            <input type="text" />
+            <input type="text" />
+            <input type="text" /> -->
+        </div>
+    </div>
 
     <script src="./js/modal.js"></script>
 

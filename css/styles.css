@@ -128,6 +128,7 @@ button {
   color: var(--main-text-color);
   text-decoration: none;
   position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-nav {
@@ -153,6 +154,7 @@ button {
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail-icon,
@@ -220,6 +222,7 @@ button {
   line-height: 1.71;
   /* or 171% */
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer .contacts .item:not(:last-child) {
@@ -281,6 +284,8 @@ button {
   width: 44px;
   padding: 12px 12px;
   color: var(--main-backgroung);
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer .instagram-icon,
@@ -335,6 +340,7 @@ button {
   border-radius: 4px;
   color: inherit;
   padding: 10px 32px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -343,6 +349,56 @@ button {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 500ms, visibility 500ms;
+}
+
+.backdrop.is-hidden .modal {
+  transform: scale(0.5);
+}
+
+.modal {
+  width: 528px;
+  min-height: 581px;
+  background-color: var(--main-backgroung);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 500ms;
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.close-icon {
+  fill: var(--main-text-color);
+  width: 18px;
+  height: 18px;
+}
+
+.is-hidden {
+  opacity: 0.5;
+  pointer-events: none;
+  visibility: hidden;
+}
 /* -------------------------------------------------- */
 
 /* Описание стилей секции особенностей */
@@ -510,6 +566,9 @@ button {
   width: 44px;
   padding: 12px 12px;
   color: var(--light-icons);
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .instagram-icon,
@@ -523,7 +582,6 @@ button {
 .our-team .list .item .social-links .social-list .social-item .social-link:focus {
   background-color: var(--accent-text-color);
   color: var(--main-backgroung);
-  border-radius: 50%;
 }
 /* ----------------------------------- */
 
@@ -555,6 +613,8 @@ button {
   color: var(--light-icons);
   border: 1px solid var(--light-icons);
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients .clients-links .clients-item:not(:last-child) {
@@ -591,6 +651,9 @@ button {
   background-color: var(--light-background);
   border-radius: 4px;
   border: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-list .item:not(:last-child) {
@@ -599,14 +662,14 @@ button {
 
 .filter-list .item .filter-button:hover,
 .filter-list .item .filter-button:focus {
-  color: #ffffff;
+  color: var(--main-backgroung);
   background-color: var(--accent-text-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .filter-list .item .filter-active {
-  color: #ffffff;
+  color: var(--main-backgroung);
   background-color: var(--accent-text-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -625,6 +688,8 @@ button {
   background-color: var(--main-backgroung);
   border-radius: 0px 0px 4px 4px;
   flex-basis: calc((100% - 90px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
 .portfolio .list .item:hover,
@@ -657,6 +722,36 @@ button {
   font-size: 16px;
   line-height: 1.875;
   color: var(--secondary-text-color);
+}
+
+.portfolio .list .item .frame .overlay {
+  padding: 63px 24px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.portfolio .list .item:hover .overlay,
+.portfolio .list .item:focus .overlay {
+  transform: translateY(0%);
+}
+
+.portfolio .list .item .frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .list .item .frame .overlay .img-text {
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.55;
+  /* or 156% */
+  color: var(--main-backgroung);
 }
 
 /* ----------------------------------- */
